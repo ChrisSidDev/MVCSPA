@@ -9,7 +9,7 @@ namespace SPAWebApp.Controllers
         public object Post([FromBody] string q)
         {
             MoviesData model = null;
-            var base_url = "http://api.tvmaze.com/singlesearch/shows" + q;
+            var base_url = "http://api.tvmaze.com/singlesearch/shows" + q + "&embed=episodes";
             var client = new HttpClient();
             var task =
                 client.GetAsync(base_url)

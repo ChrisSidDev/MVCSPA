@@ -43,6 +43,22 @@ import { TvMazeService } from '../services/TvMaze';
                </div>
             </div>
         </div>
+
+      <div *ngIf="results">
+       <div class="results">
+        <div class="content">
+            <h2>Episodes</h2>
+              <div class="col-sm-4 image-result" *ngFor="let result of results._embedded.episodes;  let i=index;">
+                <div *ngIf="i<10">
+                 <a href="{{result.url}}" *ngIf="result.image"><img src="{{result.image.medium}}"/></a>
+                 <div class="caption">{{result.season}}.{{result.number}} {{result.name}}</div>
+               </div>
+             </div>
+             
+        </div>
+       </div>
+      </div>
+
     </div>
    </div>
   `

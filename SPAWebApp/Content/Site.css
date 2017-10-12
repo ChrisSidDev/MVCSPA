@@ -18,6 +18,14 @@ textarea {
 img {
     border: 7px solid #ccc;
     border-radius: 3px;
+    margin: 10px;
+}
+.thumbnail {
+    border: none !important;
+}
+.caption {
+    padding: 9px;
+    color: #333333;
 }
 div.description {
     padding-left: 0 !important;
