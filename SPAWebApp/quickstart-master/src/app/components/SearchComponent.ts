@@ -51,7 +51,7 @@ import { TvMazeService } from '../services/TvMaze';
              <div class="row">
               <div class="col-md-4 thumbnail" *ngFor="let result of results._embedded.episodes;  let i=index;">
                 <div *ngIf="i<15">
-                 <a href="{{result.url}}" *ngIf="result.image">
+                 <a href="{{result.url}}" *ngIf="result.image" target="_blank">
                     <img  class="img-responsive" src="{{result.image.medium}}"/>
                     <span class="caption">{{result.season}}.{{result.number}} {{result.name}}</span>
                  </a>
