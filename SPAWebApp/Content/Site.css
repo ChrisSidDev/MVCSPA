@@ -20,8 +20,7 @@ h2 {
     display: inline-block;
 }
 img {
-    border: 3px solid #ccc;
-    border-radius: 3px;
+    border: 5px solid #e6e6e6;
     margin: 10px;
 }
 .thumbnail {
@@ -31,15 +30,14 @@ img {
     padding: 9px;
     color: #333333;
     position: absolute;
-    bottom: 15px;
+    bottom: 19px;
     background: url("pixel-black.png") repeat;
     color: #fff !important;
-    left: 17px;
-    width: 86%;
+    left: 19px;
+    width: 74%;
 }
 div.description {
     padding-left: 0 !important;
-    text-align: right;
 }
 .description div {
     margin: 5px 0;

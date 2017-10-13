@@ -23,7 +23,7 @@ import { TvMazeService } from '../services/TvMaze';
     <button class="btn btn-primary col-xs-3 col-sm-2 col-md-2 col-lg-2" (click)="submit(newquery.value)">Search</button>
      <div *ngIf="results">
       <div *ngIf="results.notFound ">
-       <div class="text-muted">
+       <div class="text-muted col-xs-9">
         <small>No shows were found with the term '{{ query }}'</small>
        </div>
       </div>
@@ -36,13 +36,13 @@ import { TvMazeService } from '../services/TvMaze';
     <div class="results" *ngIf="!results.notFound">
       <h2>Results</h2>
        <div class="content">
-              <div class="col-sm-6 description">
+              <div class="col-sm-6 col-xs-3 description">
                 <div>Name: {{results.name}}</div>
                 <div>Language: {{results.language}}</div>
                 <div>Genres: <span *ngFor="let genre of results.genres;  let i=index">{{genre}}<span *ngIf="i<results.genres.length-1"> - </span></span></div>
                 <div><a href="{{results.url}}">See more</a></div>
               </div>
-             <div class="col-sm-6">
+             <div class="col-sm-6 col-xs-9">
                <div *ngIf="results.image">
                 <a href="{{results.url}}"><img src="{{results.image.medium}}" class="img-responsive"/></a>
                </div>
@@ -50,7 +50,7 @@ import { TvMazeService } from '../services/TvMaze';
         </div>
 
       <div *ngIf="results">
-       <div class="results">
+       <div class="results-episodes">
         <div class="content">
             <h2>Episodes</h2>
              <div class="row">
@@ -60,10 +60,7 @@ import { TvMazeService } from '../services/TvMaze';
                     <img  class="img-responsive" src="{{result.image.medium}}"/>
                     <span class="caption">{{result.season}}.{{result.number}} {{result.name}}</span>
                  </a>
-                 
                </div>
-
-              
 
              </div>
             </div>
