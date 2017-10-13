@@ -48,12 +48,20 @@ import { TvMazeService } from '../services/TvMaze';
        <div class="results">
         <div class="content">
             <h2>Episodes</h2>
-              <div class="col-sm-4 image-result" *ngFor="let result of results._embedded.episodes;  let i=index;">
-                <div *ngIf="i<10">
-                 <a href="{{result.url}}" *ngIf="result.image"><img src="{{result.image.medium}}"/></a>
-                 <div class="caption">{{result.season}}.{{result.number}} {{result.name}}</div>
+             <div class="row">
+              <div class="col-md-4 thumbnail" *ngFor="let result of results._embedded.episodes;  let i=index;">
+                <div *ngIf="i<15">
+                 <a href="{{result.url}}" *ngIf="result.image">
+                    <img  class="img-responsive" src="{{result.image.medium}}"/>
+                    <span class="caption">{{result.season}}.{{result.number}} {{result.name}}</span>
+                 </a>
+                 
                </div>
+
+              
+
              </div>
+            </div>
              
         </div>
        </div>

@@ -15,8 +15,11 @@ select,
 textarea {
     max-width: 280px;
 }
+h2 {
+    color: #369;
+}
 img {
-    border: 7px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 3px;
     margin: 10px;
 }
@@ -26,6 +29,12 @@ img {
 .caption {
     padding: 9px;
     color: #333333;
+    position: absolute;
+    bottom: 15px;
+    background: url("pixel-black.png") repeat;
+    color: #fff !important;
+    left: 17px;
+    width: 86%;
 }
 div.description {
     padding-left: 0 !important;
