@@ -18,7 +18,6 @@ import {
     HashLocationStrategy,
     APP_BASE_HREF
 } from '@angular/common';
-
 /*
  * Components
  */
@@ -53,7 +52,7 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(routes) // <-- routes
+        RouterModule.forRoot(routes), // <-- routes,
     ],
     bootstrap: [RoutesDemoApp],
     providers: [

@@ -3,7 +3,8 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoadingBarModule, LoadingBarService } from "ng2-loading-bar";
 
 /*
  * Services
@@ -13,6 +14,7 @@ import { TvMazeService } from '../services/TvMaze';
 @Component({
     selector: 'search',
     template: `
+<loading-bar color="#369" [height]="3" [animationTime]="0.3" [runInterval]="100" [progress]="0"></loading-bar>
 <div class="content">
  <div class="row">
   <div class="form-inline search-box">
@@ -79,10 +81,27 @@ export class SearchComponent implements OnInit {
 
     constructor(private tvmaze: TvMazeService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private loadingBarService: LoadingBarService) {
         this.route
             .queryParams
             .subscribe(params => { this.query = params['query'] || ''; });
+    }
+
+    emitStart() {
+        this.loadingBarService.start();
+    }
+
+    emitStop() {
+        this.loadingBarService.stop();
+    }
+
+    emitReset() {
+        this.loadingBarService.reset();
+    }
+
+    emitComplete() {
+        this.loadingBarService.complete();
     }
 
     ngOnInit(): void {
@@ -99,7 +118,7 @@ export class SearchComponent implements OnInit {
         if (!this.query) {
             return;
         }
-
+        this.emitStart();
         this.tvmaze
             .search(this.query)
             .subscribe((res: any) => this.renderResults(res));
@@ -108,6 +127,7 @@ export class SearchComponent implements OnInit {
 
     renderResults(res: any): void {
         this.results = null;
+        this.emitComplete();
         if (res) {
             this.results = res;
         }

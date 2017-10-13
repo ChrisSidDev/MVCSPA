@@ -30,7 +30,7 @@ import { SearchComponent } from './app/components/SearchComponent';
  * Services
  */
 import { TVMAZE_PROVIDERS } from './app/services/TvMaze';
-
+import { LoadingBarModule, LoadingBarService } from "ng2-loading-bar";
 
 
 @Component({
@@ -54,7 +54,8 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(routes) // <-- routes
+        RouterModule.forRoot(routes), // <-- routes
+        LoadingBarModule
     ],
     bootstrap: [RoutesDemoApp],
     providers: [
