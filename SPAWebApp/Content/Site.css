@@ -17,6 +17,7 @@ textarea {
 }
 h2 {
     color: #369;
+    display: inline-block;
 }
 img {
     border: 3px solid #ccc;

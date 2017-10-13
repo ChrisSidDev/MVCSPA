@@ -29,7 +29,7 @@ import { TvMazeService } from '../services/TvMaze';
   </div>
    <div *ngIf="results">
     <div class="results" *ngIf="!results.notFound">
-      <h1>Results</h1>
+      <h2>Results</h2>
        <div class="content">
               <div class="col-sm-6 description">
                 <div>Name: {{results.name}}</div>
