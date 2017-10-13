@@ -47,3 +47,6 @@ div.description {
 .results, .search-box {
     margin: 7%;
 }
+.search-box input, .search-box button {
+    margin: 5px;
+}
